@@ -44,25 +44,42 @@ function App() {
   }
 
   return (
-    <main>
-      <h2>Stopwatch</h2>
-      <div className="stopwatch-wrapper">
+    <main className="text-center mt-10">
+      <h1 className="text-center text-xl mb-4 font-bold font-['Poppins']">
+        Stopwatch
+      </h1>
+      <div className="flex justify-center items-center border-2 border-dotted border-[#242424] h-[250px] w-[250px] rounded-full mx-auto">
         <div>
-          <span>
+          <span className="text-4xl font-bold font-['Poppins']">
             {time.hours.toString().padStart(2, "0")}:
             {time.minutes.toString().padStart(2, "0")}:
             {time.seconds.toString().padStart(2, "0")}
           </span>
         </div>
       </div>
-      <div className="button-stack">
+      <div className="flex gap-2.5 mt-4 justify-center">
         {isRunning ? (
-          <button onClick={() => setIsRunning(false)}>Stop</button>
+          <button
+            onClick={() => setIsRunning(false)}
+            className="w-24 py-2.5 bg-white border border-[#242424] font-['Poppins'] text-base cursor-pointer transition-all duration-300 ease-out hover:bg-[#242424] hover:text-white"
+          >
+            Stop
+          </button>
         ) : (
-          <button onClick={() => setIsRunning(true)}>Start</button>
+          <button
+            onClick={() => setIsRunning(true)}
+            className="w-24 py-2.5 bg-white border border-[#242424] font-['Poppins'] text-base cursor-pointer transition-all duration-300 ease-out hover:bg-[#242424] hover:text-white"
+          >
+            Start
+          </button>
         )}
 
-        <button onClick={resetTimer}>Reset</button>
+        <button
+          onClick={resetTimer}
+          className="w-24 py-2.5 bg-white border border-[#242424] font-['Poppins'] text-base cursor-pointer transition-all duration-300 ease-out hover:bg-[#242424] hover:text-white"
+        >
+          Reset
+        </button>
       </div>
     </main>
   );
